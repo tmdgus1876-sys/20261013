@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>랜덤 발표자 뽑기</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>랜덤 발표자 뽑기</h1>
+  </header>
+
+  <main class="app-main">
+    <!-- 발표자 표시 영역 -->
+    <section class="result-section" aria-live="polite">
+      <p class="result-label">오늘의 발표자</p>
+      <div class="result-name is-empty" id="resultName">발표자를 뽑아주세요</div>
+    </section>
+
+    <!-- 발표자 뽑기 버튼 -->
+    <button type="button" class="btn btn-primary btn-pick" id="pickBtn">
+      발표자 뽑기
+    </button>
+
+    <!-- 학생 관리 영역 -->
+    <section class="manage-section">
+      <h2 class="section-title">학생 관리</h2>
+
+      <form class="add-form" id="addForm">
+        <label class="sr-only" for="nameInput">학생 이름</label>
+        <input
+          type="text"
+          id="nameInput"
+          name="name"
+          placeholder="학생 이름을 입력하세요"
+          autocomplete="off"
+        />
+        <button type="submit" class="btn btn-secondary" id="addBtn">추가</button>
+      </form>
+
+      <ul class="student-list" id="studentList"></ul>
+
+      <p class="empty-message" id="emptyMessage">아직 등록된 학생이 없습니다.</p>
+
+      <div class="reset-wrap">
+        <button type="button" class="btn btn-danger" id="resetBtn">전체 초기화</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
